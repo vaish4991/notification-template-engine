@@ -17,7 +17,7 @@ users =[
     User(
         "Anushka",
         "anushka3@gmail.com",
-         "fr"    
+         "te"    
     )
 
 ]
