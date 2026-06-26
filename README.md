@@ -221,7 +221,4 @@ The current implementation can be extended to support:
 ## Author
 
 Vaishnavi Jagdale
-
-Internship Task
-
 Multi-Language Template Support
