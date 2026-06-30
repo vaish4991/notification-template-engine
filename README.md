@@ -170,8 +170,3 @@ The system records important events including:
 
 **Vaishnavi Jagdale**
 
----
-
-# License
-
-This project is developed for internship learning purposes.
