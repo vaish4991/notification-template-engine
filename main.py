@@ -1,43 +1,77 @@
 from users import User
 from notification_service import send_notification
-users =[
 
-    User(
-        "Vaishnavi",
-        "vaish@gmail.com",
-        "en"
-    ),
 
-    User(
-        "Jaya",
-        "jaya1@gmail.com",
-        "hi"
-    ),
+def main():
 
-    User(
-        "Anushka",
-        "anushka3@gmail.com",
-         "fr"    
-    )
+    users = [
 
-]
+        User(
+            "Vaishnavi",
+            "vaish@gmail.com",
+            "en"
+        ),
 
-event = "interview_scheduled"
+        User(
+            "Jaya",
+            "jaya@gmail.com",
+            "hi"
+        ),
 
-data = {
+        User(
+            "Anushka",
+            "anushka@gmail.com",
+            "te"
+        )
+    ]
 
-    "date" : "10 July",
+    # Different notification events
+    events = [
 
-    "time" : "5 PM"
-}
+        "interview_scheduled",
+        "interview_reminder",
+        "interview_cancelled",
+        "interview_completed"
 
-for user in users:
-    message = send_notification(
-        user,
-        event,
-        data
-    )
+    ]
 
-    print("=" * 40)
-    print(f"Notification for {user.name}")
-    print(message)
+    data = {
+
+        "date": "10 July",
+        "time": "5 PM"
+
+    }
+
+    for event in events:
+
+        print("\n")
+        print("=" * 60)
+        print(f"EVENT : {event.upper()}")
+        print("=" * 60)
+
+        for user in users:
+
+            try:
+
+                message = send_notification(
+                    user,
+                    event,
+                    data
+                )
+
+                print("\n")
+                print("-" * 40)
+                print(f"Notification for {user.name}")
+                print("-" * 40)
+                print(message)
+
+            except Exception as e:
+
+                print(
+                    f"Error sending notification "
+                    f"to {user.name}: {e}"
+                )
+
+
+if __name__ == "__main__":
+    main()
